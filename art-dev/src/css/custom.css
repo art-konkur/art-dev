@@ -4,27 +4,31 @@
  * work well for content-centric websites.
  */
 
-/* Import Persian fonts */
-@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
-@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;500;600;700;800;900&display=swap');
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@700;900&display=swap');
 
 /* RTL and Persian language setup */
-html[lang="fa"],
-body[data-direction="rtl"] {
+html[dir="rtl"] {
   direction: rtl;
   text-align: right;
 }
 
 /* You can override the default Infima variables here. */
 :root {
+  /* Font families */
+  --ifm-font-family-base: 'Vazirmatn', system-ui, -apple-system;
+  --ifm-font-family-monospace: 'Vazirmatn', SFMono-Regular;
+  --ifm-heading-font-family: 'Kufam', 'Vazirmatn';
+  
   /* Primary colors */
   --ifm-color-primary: #4969e1;
-  --ifm-color-primary-dark: #2f54dd;
-  --ifm-color-primary-darker: #244ad9;
-  --ifm-color-primary-darkest: #1e3db3;
-  --ifm-color-primary-light: #637ee5;
+  --ifm-color-primary-dark: #2f53dd;
+  --ifm-color-primary-darker: #2348d4;
+  --ifm-color-primary-darkest: #1d3bae;
+  --ifm-color-primary-light: #637fe5;
   --ifm-color-primary-lighter: #6f89e7;
-  --ifm-color-primary-lightest: #96a8ee;
+  --ifm-color-primary-lightest: #96aaee;
   
   /* Custom text colors */
   --ifm-color-text: #4A5568;
@@ -32,10 +36,8 @@ body[data-direction="rtl"] {
   --ifm-background-color: #f5f5f5;
   
   /* Typography */
-  --ifm-font-family-base: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-  --ifm-heading-font-family: 'Kufam', 'Vazirmatn', system-ui, -apple-system, sans-serif;
   --ifm-font-size-base: 16px;
-  --ifm-line-height-base: 1.7;
+  --ifm-line-height-base: 1.8;
   --ifm-font-weight-normal: 400;
   --ifm-font-weight-bold: 700;
   --ifm-heading-font-weight: 700;
@@ -43,6 +45,19 @@ body[data-direction="rtl"] {
   /* Code */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Typography Base Settings */
+  --text-letter-spacing: -0.02em;
+  --heading-letter-spacing: -0.03em;
+  --paragraph-spacing: 1.5rem;
+  --line-height-tight: 1.4;
+  --line-height-normal: 1.8;
+  --line-height-relaxed: 2;
+  
+  /* Hero Gradient Colors */
+  --hero-gradient-start: #4969e1;
+  --hero-gradient-mid: #6f89e7;
+  --hero-gradient-end: #e9ecfb;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -61,72 +76,192 @@ body[data-direction="rtl"] {
   --ifm-heading-color: #ffffff;
   
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Hero Gradient Colors */
+  --hero-gradient-start: #1d3bae;
+  --hero-gradient-mid: #4969e1;
+  --hero-gradient-end: #2f53dd;
 }
 
-/* Typography sizing */
-h1, .h1 {
-  font-size: 60px;
-  font-family: var(--ifm-heading-font-family);
-  color: var(--ifm-heading-color);
-  font-weight: var(--ifm-heading-font-weight);
-  line-height: 1.2;
-  margin-bottom: 1rem;
+/* RTL Specific Styles */
+html[dir='rtl'] {
+  --doc-sidebar-width: 18rem;
 }
 
-h2, .h2 {
-  font-size: 48px;
-  font-family: var(--ifm-heading-font-family);
-  color: var(--ifm-heading-color);
-  font-weight: var(--ifm-heading-font-weight);
-  line-height: 1.3;
-  margin-bottom: 0.8rem;
-}
-
-h3, .h3 {
-  font-size: 36px;
-  font-family: var(--ifm-heading-font-family);
-  color: var(--ifm-heading-color);
-  font-weight: var(--ifm-heading-font-weight);
-  line-height: 1.4;
-  margin-bottom: 0.8rem;
-}
-
-h4, .h4 {
-  font-size: 30px;
-  font-family: var(--ifm-heading-font-family);
-  color: var(--ifm-heading-color);
-  font-weight: var(--ifm-heading-font-weight);
-  line-height: 1.4;
-}
-
-h5, .h5 {
-  font-size: 24px;
-  font-family: var(--ifm-heading-font-family);
-  color: var(--ifm-heading-color);
-  font-weight: var(--ifm-heading-font-weight);
-  line-height: 1.5;
-}
-
-h6, .h6 {
-  font-size: 20px;
-  font-family: var(--ifm-heading-font-family);
-  color: var(--ifm-heading-color);
-  font-weight: var(--ifm-heading-font-weight);
-  line-height: 1.5;
+/* Typography Improvements */
+html {
+  font-size: 16px;
+  direction: rtl;
 }
 
 body {
   font-family: var(--ifm-font-family-base);
-  font-size: var(--ifm-font-size-base);
-  color: var(--ifm-color-text);
-  background-color: var(--ifm-background-color);
-  line-height: var(--ifm-line-height-base);
-  font-weight: var(--ifm-font-weight-normal);
+  font-weight: 400;
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--text-letter-spacing);
+  text-align: right;
 }
 
-/* Paragraph styling */
-p {
+h1, h2 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--heading-letter-spacing);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--heading-letter-spacing);
   margin-bottom: 1.25rem;
+}
+
+h4 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--heading-letter-spacing);
+  margin-bottom: 1rem;
+}
+
+h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--heading-letter-spacing);
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: var(--paragraph-spacing);
+  line-height: var(--line-height-relaxed);
+}
+
+p + p {
+  margin-top: calc(-1 * var(--paragraph-spacing));
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--paragraph-spacing);
+  padding-right: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: var(--line-height-normal);
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 996px) {
+  :root {
+    --paragraph-spacing: 1.25rem;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h5, h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  body {
+    font-size: 0.9rem;
+    line-height: var(--line-height-normal);
+  }
+
+  p {
+    margin-bottom: var(--paragraph-spacing);
+  }
+}
+
+/* Mobile Typography */
+@media screen and (max-width: 996px) {
+  h1, h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5, h6 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+/* Light text elements */
+.text-light {
+  font-weight: 300;
+}
+
+/* Regular text elements */
+.text-regular {
+  font-weight: 400;
+}
+
+/* Medium text elements */
+.text-medium {
+  font-weight: 500;
+}
+
+/* Navbar RTL Adjustments */
+.navbar__items--right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.navbar__items--left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Footer RTL Adjustments */
+.footer__links {
+  text-align: right;
+}
+
+/* Content RTL Adjustments */
+.markdown > * {
+  text-align: right;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 996px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .navbar__items {
+    justify-content: flex-end;
+  }
 }
 
 /* Link styling */
@@ -159,6 +294,57 @@ a {
   font-weight: 600;
 }
 
+.navbar__brand {
+  margin-right: 0.5rem;
+}
+
+.navbar__logo {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.navbar__title {
+  margin-right: 0.25rem;
+  padding-right: 0.5rem;
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Mobile menu buttons */
+.navbar-sidebar__close {
+  padding: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.navbar-sidebar__close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.navbar-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 996px) {
+  .navbar__title {
+    font-size: 1rem;
+    padding-right: 0.25rem;
+    margin-right: 0.25rem;
+  }
+  
+  .navbar__logo {
+    margin-left: 0.25rem;
+  }
+
+  .navbar__toggle {
+    margin-left: 0.5rem;
+  }
+}
+
 /* Footer styling */
 .footer {
   font-family: var(--ifm-font-family-base);
@@ -169,54 +355,92 @@ a {
   font-weight: 700;
 }
 
-/* Mobile responsive typography */
+/* Hero Section Styles */
+.hero {
+  background: linear-gradient(135deg, 
+    var(--hero-gradient-start) 0%,
+    var(--hero-gradient-mid) 50%,
+    var(--hero-gradient-end) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.hero__title {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero__subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Mobile Adjustments */
 @media screen and (max-width: 996px) {
-  :root {
-    --ifm-font-size-base: 14px;
-    --ifm-line-height-base: 1.6;
-  }
-  
-  h1, .h1 {
-    font-size: 40px;
-    line-height: 1.2;
-  }
-  
-  h2, .h2 {
-    font-size: 36px;
-    line-height: 1.25;
-  }
-  
-  h3, .h3 {
-    font-size: 30px;
-    line-height: 1.3;
-  }
-  
-  h4, .h4 {
-    font-size: 24px;
-    line-height: 1.35;
-  }
-  
-  h5, .h5 {
-    font-size: 20px;
-    line-height: 1.4;
-  }
-  
-  h6, .h6 {
-    font-size: 18px;
-    line-height: 1.4;
+  .hero {
+    background: linear-gradient(165deg,
+      var(--hero-gradient-start) 0%,
+      var(--hero-gradient-mid) 60%,
+      var(--hero-gradient-end) 100%
+    );
   }
 }
 
-/* Fix RTL issues in specific components */
-html[lang="fa"] .navbar__items--right {
-  margin-right: auto;
-  margin-left: 0;
+/* CTA Button Styles */
+.button--primary {
+  background-color: #FFAB40;
+  border: 2px solid #C16C00;
+  color: #000000;
+  box-shadow: 0 6px 0 0 #FFAB40;
+  transition: all 0.3s ease;
 }
 
-html[lang="fa"] .dropdown__menu {
-  text-align: right;
+.button--primary:hover {
+  background-color: #FFC167;
+  border-color: #C16C00;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 0 #FFAB40;
 }
 
-html[lang="fa"] .table-of-contents {
-  padding-right: 0;
+.button--primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 0 #FFAB40;
+}
+
+[data-theme='dark'] .button--primary {
+  color: #000000;
+}
+
+[data-theme='dark'] .button--primary:hover {
+  color: #000000;
+}
+
+/* Hero CTA specific */
+.hero .button--primary {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  .hero .button--primary {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }

@@ -3,24 +3,23 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'کوشک کنکورهنر',
-  tagline: 'عمارتی برای یادگیری هنر',
+  title: 'کوشک کنکور هنر',
+  tagline: 'مرجع جامع آمادگی برای کنکور هنر',
   favicon: 'img/favicon.ico',
   
   // Set the production url of your site here
-  url: 'http://kushk.surge.sh',
+  url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config
-  // organizationName: 'your-org', // Usually your GitHub org/user name
-  // projectName: 'your-project', // Usually your repo name
+  // GitHub pages deployment config.
+  organizationName: 'facebook',
+  projectName: 'docusaurus',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang
   i18n: {
     defaultLocale: 'fa',
     locales: ['fa'],
@@ -29,7 +28,7 @@ const config: Config = {
         direction: 'rtl',
         htmlLang: 'fa',
         calendar: 'persian',
-        label: 'فارسی',
+        path: 'fa',
       },
     },
   },
@@ -61,73 +60,62 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // This adds a loading bar as you change pages
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'کوشک',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'لوگوی کوشک کنکور هنر',
         src: 'img/logo.svg',
       },
+      title: 'کوشک کنکور هنر',
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'left',
+          position: 'right',
           label: 'آموزش‌ها',
         },
-        {to: '/blog', label: 'وبلاگ', position: 'left'},
-        {
-          href: 'https://github.com/your-username/your-repo-name',
-          label: 'GitHub',
-          position: 'right',
-        },
+        {to: '/blog', label: 'وبلاگ', position: 'right'},
+        {to: '/contact', label: 'تماس با ما', position: 'right'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'آموزش',
+          title: 'آموزش‌ها',
           items: [
             {
-              label: 'دوره‌های هنری',
+              label: 'مقدمه',
               to: '/docs/intro',
             },
-          ],
-        },
-        {
-          title: 'جامعه هنری',
-          items: [
             {
-              label: 'انجمن دانشجویان',
-              href: 'https://forum.kushk.art',
-            },
-            {
-              label: 'اینستاگرام',
-              href: 'https://instagram.com/kushk.art',
-            },
-            {
-              label: 'تلگرام',
-              href: 'https://t.me/kushk_art',
+              label: 'دروس تخصصی',
+              to: '/docs/category/specialized',
             },
           ],
         },
         {
-          title: 'بیشتر',
+          title: 'ارتباط با ما',
           items: [
+            {
+              label: 'تماس با ما',
+              to: '/contact',
+            },
             {
               label: 'وبلاگ',
               to: '/blog',
             },
-            {
-              label: 'گیت‌هاب',
-              href: 'https://github.com/your-username/your-repo-name',
-            },
           ],
         },
       ],
-      copyright: `Copyright ${new Date().getFullYear()} کوشک کنکورهنر`,
+      copyright: `تمامی حقوق محفوظ است  ${new Date().getFullYear()} کوشک کنکور هنر`,
     },
     prism: {
       theme: prismThemes.github,
