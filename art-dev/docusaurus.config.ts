@@ -33,12 +33,55 @@ const config: Config = {
     },
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/logo.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#2196f3',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: '#2196f3',
+          },
+        ],
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
+          routeBasePath: 'docs',
+          include: ['**/*.md', '**/*.mdx'],
           // Please change this to your repo
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -83,6 +126,10 @@ const config: Config = {
         },
         {to: '/blog', label: 'وبلاگ', position: 'right'},
         {to: '/contact', label: 'تماس با ما', position: 'right'},
+        {
+          type: 'search',
+          position: 'right',
+        },
       ],
     },
     footer: {
@@ -116,6 +163,15 @@ const config: Config = {
         },
       ],
       copyright: `تمامی حقوق محفوظ است  ${new Date().getFullYear()} کوشک کنکور هنر`,
+    },
+    algolia: {
+      appId: 'YOUR_APP_ID',
+      apiKey: 'YOUR_SEARCH_API_KEY',
+      indexName: 'YOUR_INDEX_NAME',
+      contextualSearch: true,
+      externalUrlRegex: 'external\\.com|domain\\.com',
+      searchParameters: {},
+      searchPagePath: 'search',
     },
     prism: {
       theme: prismThemes.github,
