@@ -11,11 +11,14 @@ export function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className={styles.description}>
+          راهنمای جامع و تخصصی برای موفقیت در کنکور هنر. با ما، رویاهای هنری خود را محقق کنید!
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            شروع یادگیری برای کنکور هنر - ۱۵ دقیقه
+            🌀 ورود به دنیای هنر 
           </Link>
         </div>
       </div>
