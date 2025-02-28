@@ -11,6 +11,14 @@
   overflow: hidden;
 }
 
+.description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 1rem auto;
+  color: var(--ifm-color-gray-100);
+  line-height: 1.6;
+}
+
 .buttons {
   display: flex;
   align-items: center;

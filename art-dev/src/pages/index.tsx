@@ -16,7 +16,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            شروع یادگیری برای کنکور هنر - ۱۵ دقیقه
+             🌀 ورود به دنیای هنر 
           </Link>
         </div>
       </div>
